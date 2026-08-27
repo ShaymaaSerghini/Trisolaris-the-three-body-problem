@@ -1,6 +1,6 @@
-# Trisolaris: Numerical Simulation of Stellar Systems
+## Trisolaris: Numerical Simulation of Stellar Systems
 
-## Overview
+### Overview
 
 This project uses Python to simulate gravitationally interacting stars and explore **stable, periodic and chaotic dynamical systems**.
 
@@ -14,7 +14,7 @@ I developed simulations for:
 The equations of motion were solved using a custom **Midpoint method**, custom **RK4 integrator**, and SciPy's adaptive **RK45 `solve_ivp`** solver.
 
 
-## Technologies & Skills
+### Technologies & Skills
 
 **Python · NumPy · SciPy · Matplotlib · Jupyter Notebook**
 
@@ -32,9 +32,9 @@ Key skills:
 - Conservation laws
 
 
-# Results
+## Results
 
-## 1. Binary Star System
+### 1. Binary Star System
 
 Two stars were modelled using Newtonian gravity.
 
@@ -47,14 +47,14 @@ Star 2: mass = 1, position = [-2,0], velocity = [0,0.2]
 
 The system was solved using both **RK45** and my own **second-order Midpoint integrator**.
 
-### Result
+#### Result
 
 Both methods produced stable closed orbits.
 
 RK45 produced a more accurate solution over long integrations because it automatically adapts its timestep.
 
 
-## 2. Phase-Space Analysis
+### 2. Phase-Space Analysis
 
 For one star, I plotted:
 
@@ -62,12 +62,12 @@ For one star, I plotted:
 position vs velocity
 ```
 
-### Result
+#### Result
 
 The phase-space trajectory formed a closed loop, confirming periodic motion and orbital stability.
 
 
-## 3. Midpoint Convergence Test
+### 3. Midpoint Convergence Test
 
 The Midpoint method should show second-order convergence.
 
@@ -83,14 +83,14 @@ Halving the timestep should reduce the error by approximately:
 2² = 4
 ```
 
-### Result
+#### Result
 
 The numerical error decreased with increasing resolution, although the expected factor-of-four scaling was not reproduced as clearly as intended.
 
 This highlighted the importance of verifying numerical simulations rather than relying only on visually reasonable results.
 
 
-## 4. Stable Three-Body System
+### 4. Stable Three-Body System
 
 The model was extended to three equal-mass stars using initial conditions for the known **figure-eight orbit**.
 
@@ -100,14 +100,14 @@ The system was independently solved using:
 - Midpoint
 - RK4
 
-### Result
+#### Result
 
 The stars followed a stable, symmetric and repeating figure-eight trajectory.
 
 Both RK45 and Midpoint reproduced the same overall behaviour.
 
 
-## 5. RK4 Convergence
+### 5. RK4 Convergence
 
 I implemented a fourth-order Runge-Kutta solver and tested it using:
 
@@ -121,18 +121,18 @@ For RK4, halving the timestep should reduce numerical error by approximately:
 2⁴ = 16
 ```
 
-### Result
+#### Result
 
 The convergence behaviour was consistent with the expected fourth-order scaling.
 
 
-## 6. Chaotic Three-Body System
+### 6. Chaotic Three-Body System
 
 The stable figure-eight initial velocities were deliberately perturbed.
 
 The gravitational equations remained unchanged.
 
-### Result
+#### Result
 
 The regular figure-eight orbit disappeared and the trajectories became irregular and non-periodic.
 
@@ -141,7 +141,7 @@ Eventually, one star was **ejected from the system**, demonstrating sensitivity 
 The stable system produced closed phase-space trajectories, while the chaotic system produced irregular, non-repeating phase-space behaviour.
 
 
-## 7. Hypergiant Merger Simulation
+### 7. Hypergiant Merger Simulation
 
 The model was extended to finite-sized stars capable of merging.
 
@@ -165,7 +165,7 @@ When two stars merge:
 - Velocity is determined using conservation of momentum
 - Radius is updated
 
-### Result
+#### Result
 
 The system evolved from:
 
@@ -180,13 +180,13 @@ The system evolved from:
 This required the simulation to dynamically change the number of objects while running.
 
 
-# What I Learned
+## What I Learned
 
-### Numerical validation matters
+#### Numerical validation matters
 
 A realistic-looking simulation is not enough. Numerical results should be checked using convergence tests, independent solvers and physical constraints.
 
-### Solver choice matters
+#### Solver choice matters
 
 I developed an understanding of the trade-offs between:
 
@@ -194,16 +194,16 @@ I developed an understanding of the trade-offs between:
 - RK4 — fixed-step, fourth-order
 - RK45 — adaptive timestep and error control
 
-### Nonlinear systems can be highly sensitive
+#### Nonlinear systems can be highly sensitive
 
 Small changes to the initial conditions transformed a stable periodic system into chaotic motion and stellar ejection.
 
-### Object-oriented design improves scientific code
+#### Object-oriented design improves scientific code
 
 Classes allowed physical objects, numerical methods and interactions to be organised separately and extended through inheritance.
 
 
-# Future Applications
+## Future Applications
 
 The methods used here could be extended to:
 
