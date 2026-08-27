@@ -133,6 +133,7 @@ For RK4, halving the timestep should reduce numerical error by approximately:
 #### Result
 
 The convergence behaviour was consistent with the expected fourth-order scaling.
+<img width="542" height="423" alt="image" src="https://github.com/user-attachments/assets/54a08916-c3ad-4d40-ba4c-c1a1f98455f3" />
 
 
 ### 6. Chaotic Three-Body System
@@ -143,7 +144,8 @@ The gravitational equations remained unchanged.
 
 #### Result
 
-<img width="542" height="343" alt="image" src="https://github.com/user-attachments/assets/1aee56c0-4374-47b2-a390-8689d6f5dfbf" />
+<img width="540" height="539" alt="image" src="https://github.com/user-attachments/assets/9249216a-83c3-4140-aafe-76239840e7ae" />
+
 
 The regular figure-eight orbit disappeared and the trajectories became irregular and non-periodic.
 
@@ -190,38 +192,38 @@ The system evolved from:
 ```
 
 This required the simulation to dynamically change the number of objects while running.
+<img width="543" height="348" alt="image" src="https://github.com/user-attachments/assets/9697bc91-3178-40fe-b503-71caa13a4cba" />
 
+<img width="542" height="329" alt="image" src="https://github.com/user-attachments/assets/c82ba516-6039-4060-911a-6f7539a7606a" />
 
 ## What I Learned
 
-#### Numerical validation matters
+Through this coursework, I learned how to translate mathematical models of physical systems into working numerical simulations in Python. I applied Newtonian gravitational equations to binary and three-body systems, converted the governing equations into a form suitable for numerical integration, and used different numerical methods to investigate how the systems evolved over time.
 
-A realistic-looking simulation is not enough. Numerical results should be checked using convergence tests, independent solvers and physical constraints.
+I also learned the importance of **numerical validation**. A simulation can look physically reasonable while still containing significant numerical error, so I used convergence testing, comparisons between independent solvers, and physical quantities such as momentum and orbital behaviour to assess whether my results were reliable. Implementing the Midpoint and RK4 methods myself helped me understand how numerical accuracy depends on timestep size and the order of the integration method.
 
-#### Solver choice matters
+This project also showed me how the choice of numerical solver affects a scientific computation. By comparing my own fixed-step Midpoint and RK4 implementations with SciPy's adaptive RK45 solver, I developed a better understanding of the trade-offs between computational simplicity, accuracy, stability and adaptive error control.
 
-I developed an understanding of the trade-offs between:
+Studying the three-body problem gave me practical experience with **nonlinear and chaotic dynamical systems**. I saw directly how a small perturbation to the initial conditions could completely change the long-term evolution of the system, transforming a stable periodic figure-eight orbit into irregular motion and eventually causing one star to be ejected.
 
-- Midpoint — simple, second-order
-- RK4 — fixed-step, fourth-order
-- RK45 — adaptive timestep and error control
+I also developed my **object-oriented programming** skills. I used classes to represent stars and extended the original `Stars` class through inheritance to create a `Hypergiant` class with additional physical properties and merger behaviour. This taught me how scientific code can be structured so that models can be extended without rewriting the entire simulation.
 
-#### Nonlinear systems can be highly sensitive
+Throughout the coursework, I used **Git and GitHub** to manage and document the development of the project. This gave me experience maintaining a structured scientific coding project, tracking changes to my code and presenting numerical results clearly alongside the implementation.
 
-Small changes to the initial conditions transformed a stable periodic system into chaotic motion and stellar ejection.
+Overall, this project showed me how concepts from physics, mathematics and programming can be combined to investigate complex systems computationally rather than treating them as separate areas of study.
 
-#### Object-oriented design improves scientific code
+## Applying What I Learned
 
-Classes allowed physical objects, numerical methods and interactions to be organised separately and extended through inheritance.
+The numerical and programming techniques I developed in this project are transferable to many other computational problems. In future projects, I would reuse the same approach of first defining the mathematical model, translating it into numerical equations, validating the implementation and then analysing the resulting behaviour.
 
+The numerical integration methods could be applied to problems involving:
 
-## Future Applications
+* larger N-body gravitational systems;
+* planetary and satellite dynamics;
+* stellar clusters;
+* collision and particle simulations;
+* other systems governed by coupled differential equations.
 
-The methods used here could be extended to:
+I would also reuse the validation techniques I developed, particularly **convergence testing, comparison between independent numerical methods and checking physical constraints**, because they provide a way of determining whether a computational result can actually be trusted.
 
-- Larger N-body simulations
-- Planetary and satellite systems
-- Star clusters
-- Collision and particle simulations
-
-
+The object-oriented structure could also be extended to more complicated simulations by introducing additional particle types, physical interactions or collision rules. More generally, the project gave me a framework I can reuse in future computational physics and quantitative modelling work: **build the model, implement it carefully, test its numerical behaviour, validate the result and only then interpret the output.**
