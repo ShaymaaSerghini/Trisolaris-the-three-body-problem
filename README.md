@@ -143,11 +143,14 @@ The gravitational equations remained unchanged.
 
 #### Result
 
+<img width="542" height="343" alt="image" src="https://github.com/user-attachments/assets/1aee56c0-4374-47b2-a390-8689d6f5dfbf" />
+
 The regular figure-eight orbit disappeared and the trajectories became irregular and non-periodic.
 
 Eventually, one star was **ejected from the system**, demonstrating sensitivity to initial conditions.
 
 The stable system produced closed phase-space trajectories, while the chaotic system produced irregular, non-repeating phase-space behaviour.
+
 
 
 ### 7. Hypergiant Merger Simulation
