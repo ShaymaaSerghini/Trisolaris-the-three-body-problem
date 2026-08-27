@@ -48,6 +48,9 @@ Star 2: mass = 1, position = [-2,0], velocity = [0,0.2]
 The system was solved using both **RK45** and my own **second-order Midpoint integrator**.
 
 #### Result
+<img width="543" height="424" alt="image" src="https://github.com/user-attachments/assets/35a12998-d455-4015-9cdf-ab729ed75dad" />
+
+<img width="540" height="342" alt="image" src="https://github.com/user-attachments/assets/8aca366f-3132-462e-963a-6e0b80a582c3" />
 
 Both methods produced stable closed orbits.
 
@@ -63,6 +66,7 @@ position vs velocity
 ```
 
 #### Result
+<img width="544" height="349" alt="image" src="https://github.com/user-attachments/assets/4d6af333-cd69-4094-9880-b98735f4fb79" />
 
 The phase-space trajectory formed a closed loop, confirming periodic motion and orbital stability.
 
@@ -85,6 +89,8 @@ Halving the timestep should reduce the error by approximately:
 
 #### Result
 
+<img width="541" height="402" alt="image" src="https://github.com/user-attachments/assets/f2f705e8-9fc5-443c-a26e-0cc2355eb33a" />
+
 The numerical error decreased with increasing resolution, although the expected factor-of-four scaling was not reproduced as clearly as intended.
 
 This highlighted the importance of verifying numerical simulations rather than relying only on visually reasonable results.
@@ -101,6 +107,9 @@ The system was independently solved using:
 - RK4
 
 #### Result
+<img width="545" height="342" alt="image" src="https://github.com/user-attachments/assets/f5163528-ad3a-4480-9ff6-972e06e5f4ef" />
+
+<img width="542" height="343" alt="image" src="https://github.com/user-attachments/assets/17a404b5-070c-46ca-8c6d-09f03b61fb87" />
 
 The stars followed a stable, symmetric and repeating figure-eight trajectory.
 
